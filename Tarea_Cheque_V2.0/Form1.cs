@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoVectores.clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,16 @@ namespace Tarea_Cheque_V2._0
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Enter)
+            {
 
+                if (int.TryParse(this.textBox1.Text, out int num))
+                {
+                    //TODO: asignar cada entero al vector 
+                    this.label3.Text = NumLetras.getLetras(num);
+                    this.textBox1.Text = "";
+                }
+            }
         }
     }
 }
